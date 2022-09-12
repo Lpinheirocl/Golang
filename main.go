@@ -28,6 +28,13 @@ func (c *ContaCorrente) Depositar(valorDoDeposito float64) (string, float64) {
 			c.saldo
 	}
 }
+func (c *ContaCorrente) Transferir(valorDaTransferencia float64, contaDestino ContaCorrente) bool {
+	if valorDaTransferencia < c.saldo {
+		c.saldo -= valorDaTransferencia
+
+	}
+
+}
 func main() {
 	contaDaSilvia := ContaCorrente{titular: "Silvia", saldo: 300}
 	contaDoGustavo := ContaCorrente{titular: "Gustavo", saldo: 300}
